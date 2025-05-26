@@ -3,9 +3,24 @@
 <h3>EditServer</h3>
 <br />
 <br />
-@Id
+@if (server != null)
+{
+    <p>@server.Name </p>
+    <p>@server.City</p>
+    <p>@server.IsOnline</p>
+}
+<br />
+<a href="/servers" class="btn btn-secondary">Back to Servers</a>
 
 @code {
-     [Parameter]
+    [Parameter]
     public int Id { get; set; }
+
+    private Server? server;
+
+    protected override void OnParametersSet()
+    {
+        server = ServersRepository.GetServerById(this.Id);
+
+    }
 }
