@@ -1,5 +1,7 @@
 ﻿@page "/servers"
 
+<!-- rendermode = InteractiveServer -->
+
 @inject NavigationManager NavigationManager
 
 <h3>Servers</h3>
@@ -25,9 +27,7 @@
 
 <br />
 <br />
-<p>
-    <ServerComponent></ServerComponent>
-</p>
+<ServerComponent @rendermode="InteractiveServer"></ServerComponent> <!-- best location for interactivity -->
 <ul>
     @foreach (var server in servers)
         {
