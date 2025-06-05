@@ -24,13 +24,15 @@
 </div>
 
 <br />
-<br
-
+<br />
+<p>
+    <ServerComponent></ServerComponent>
+</p>
 <ul>
     @foreach (var server in servers)
         {
         <li>@server.Name in @server.City is
-            <span style="color:@(server.IsOnline ? "red" : "green")">
+            <span style="color:@(server.IsOnline ? "green" : "red")">
                 @(server.IsOnline ? " Online" : "Offline")
                 
             </span>
